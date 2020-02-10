@@ -56,13 +56,25 @@ const Header = ({ profile }) => {
           rightMenu={(
             <LoginNavRef
               loggedIn={!_.isEmpty(profile)}
-              notificationButtonState="none"
-              notifications={[]}
+              notificationButtonState="new"
+              notifications={[{
+                "content": "asdf",
+                "href": "aaa",
+                "category": "a",
+                "tags": [],
+                "timestamp": 123456
+              },{
+                "content": "asdf",
+                "href": "aaa",
+                "category": "a",
+                "tags": [],
+                "timestamp": 123456
+              }]}
               accountMenu={config.ACCOUNT_MENU}
               switchText={config.ACCOUNT_MENU_SWITCH_TEXT}
               onSwitch={handleSwitchMenu}
               onMenuOpen={handleCloseOpenMore}
-              showNotification={false}
+              showNotification
               profile={normalizedProfile}
               authURLs={config.HEADER_AUTH_URLS}
             />
