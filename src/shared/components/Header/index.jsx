@@ -7,6 +7,14 @@ import Logo from 'assets/images/tc-logo.svg';
 let TopNavRef;
 let LoginNavRef;
 
+const dummy = [{
+  content: 'I\'m a content',
+  href: '',
+  category: 'I\'m a category',
+  tags: ['tag1', 'tag2'],
+  timestamp: 1582752856401,
+}];
+
 try {
   // eslint-disable-next-line global-require
   const { TopNav, LoginNav } = require('navigation-component');
@@ -56,20 +64,8 @@ const Header = ({ profile }) => {
           rightMenu={(
             <LoginNavRef
               loggedIn={!_.isEmpty(profile)}
-              notificationButtonState="new"
-              notifications={[{
-                "content": "asdf",
-                "href": "aaa",
-                "category": "a",
-                "tags": [],
-                "timestamp": 123456
-              },{
-                "content": "asdf",
-                "href": "aaa",
-                "category": "a",
-                "tags": [],
-                "timestamp": 123456
-              }]}
+              notificationButtonState="none"
+              notifications={[]}
               accountMenu={config.ACCOUNT_MENU}
               switchText={config.ACCOUNT_MENU_SWITCH_TEXT}
               onSwitch={handleSwitchMenu}
@@ -108,3 +104,4 @@ Header.propTypes = {
 };
 
 export default Header;
+
